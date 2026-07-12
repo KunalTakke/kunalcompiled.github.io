@@ -1,7 +1,7 @@
 # ============================================================
 # SITE BASICS
 # ============================================================
-baseURL: "https://yourusername.github.io/"  # Your GitHub Pages URL
+baseURL: "https://kunaltakke.github.io/kunalcompiled.github.io/"  # Your GitHub Pages URL
 # ^ This MUST match your actual deployment URL.
 # Hugo uses this to generate absolute URLs for RSS feeds,
 # sitemap, Open Graph tags, etc.
