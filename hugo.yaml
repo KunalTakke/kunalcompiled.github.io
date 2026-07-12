@@ -1,0 +1,125 @@
+# ============================================================
+# SITE BASICS
+# ============================================================
+baseURL: "https://yourusername.github.io/"  # Your GitHub Pages URL
+# ^ This MUST match your actual deployment URL.
+# Hugo uses this to generate absolute URLs for RSS feeds,
+# sitemap, Open Graph tags, etc.
+# If you buy a custom domain later (e.g., kunalnaik.dev),
+# change this to "https://kunalnaik.dev/"
+
+title: "Kunal's Engineering Notes"
+theme: "PaperMod"
+
+# Pagination: how many posts per page on the home/list pages
+paginate: 10
+
+# ============================================================
+# LANGUAGE & BUILD SETTINGS
+# ============================================================
+languageCode: en-us
+
+# Enable useful built-in features
+enableRobotsTXT: true       # Generates robots.txt for search engines
+buildDrafts: false           # Don't publish posts with draft: true
+enableEmoji: true            # Lets you use :emoji: in markdown
+
+# Code syntax highlighting (important for a tech blog!)
+markup:
+  highlight:
+    codeFences: true         # Enable fenced code blocks (```)
+    guessSyntax: true        # Try to detect language if not specified
+    lineNos: false           # Set true if you want line numbers
+    style: monokai           # Color scheme for code blocks
+    # Other good options: dracula, github-dark, nord
+  goldmark:
+    renderer:
+      unsafe: true           # Allows raw HTML in markdown (for embeds etc.)
+
+# ============================================================
+# MENU (Navigation Bar)
+# ============================================================
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10            # Lower weight = appears first (left)
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 50
+
+# ============================================================
+# THEME PARAMETERS (PaperMod-specific)
+# ============================================================
+params:
+  env: production
+
+  # Home page profile mode
+  # Shows your name, title, and links instead of a post list
+  profileMode:
+    enabled: true
+    title: "Kunal Takke"
+    subtitle: "Data Engineer · MS CS @ Northeastern · Learning in Public"
+    buttons:
+      - name: Blog Posts
+        url: /posts/
+      - name: About Me
+        url: /about/
+
+  # Social icons (shown on home page in profile mode)
+  socialIcons:
+    - name: github
+      url: "https://github.com/KunalTakke"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/kunaltakke/"
+    - name: youtube
+      url: "https://youtube.com/@yourchannel"
+
+  # Post features
+  ShowReadingTime: true       # "3 min read" on each post
+  ShowShareButtons: true      # Share to Twitter/LinkedIn/etc.
+  ShowPostNavLinks: true      # Previous/Next post links
+  ShowBreadCrumbs: true       # Home > Posts > Post Title
+  ShowCodeCopyButtons: true   # Copy button on code blocks (essential!)
+  ShowToc: true               # Table of contents on posts
+  TocOpen: false              # TOC collapsed by default (reader opens it)
+
+  # Search (uses Fuse.js client-side search)
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+  # SEO and social sharing
+  description: "Technical blog about data engineering, CS fundamentals, and system design"
+  author: "Kunal Takke"
+
+  # Default theme: auto (follows system), light, or dark
+  defaultTheme: auto
+
+# ============================================================
+# OUTPUTS (needed for search to work)
+# ============================================================
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON          # PaperMod's search needs JSON output
